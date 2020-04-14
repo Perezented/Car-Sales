@@ -17,4 +17,17 @@ export const initialState = {
 
 export const rootReducer = (state = initialState, action) => {
     console.log(state, action);
+    switch (action.type) {
+        case 'REMOVE_FEATURE':
+            return {
+                ...state,
+                car: {
+                    features: state.car.features.map((value) =>
+                        console.log(value)
+                    ),
+                },
+            };
+        default:
+            return state;
+    }
 };
