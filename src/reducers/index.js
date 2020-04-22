@@ -16,9 +16,19 @@ export const initialState = {
 };
 
 export const rootReducer = (state = initialState, action) => {
-    console.log(state, action);
+    console.log('in rootReducer: ', state, action);
+    console.log('state: ', state);
     switch (action.type) {
         case 'REMOVE_FEATURE':
+            return {
+                ...state,
+                car: {
+                    features: state.car.features.map((value) =>
+                        console.log(value)
+                    ),
+                },
+            };
+        case 'ADD_FEATURE':
             return {
                 ...state,
                 car: {

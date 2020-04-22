@@ -8,7 +8,7 @@ import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
 const App = (props) => {
-    console.log(props.state);
+    console.log('in App.js: ',props.state);
 
     const removeFeature = (item) => {
         // dispatch an action here to remove an item
@@ -38,15 +38,7 @@ const App = (props) => {
 };
 const mapStateToProps = (state) => {
     return {
-        state: state,
-        // additionalPrice: state.additionalPrice,
-        // car: {
-        //     price: state.car.price,
-        //     name: state.car.name,
-        //     image: state.car.image,
-        //     features: state.car.features,
-        // },
-        // additionalFeatures: state.additionalFeatures,
+        state
     };
 };
 export default connect(mapStateToProps, {})(App);
