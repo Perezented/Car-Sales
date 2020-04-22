@@ -23,18 +23,20 @@ export const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 car: {
-                    features: state.car.features.map((value) =>
-                        console.log(value)
-                    ),
+                    features: state.car.features.map((value) => {
+                        console.log(value);
+                        return value;
+                    }),
                 },
             };
         case 'ADD_FEATURE':
             return {
                 ...state,
                 car: {
-                    features: state.car.features.map((value) =>
-                        console.log(value)
-                    ),
+                    features: state.car.features.map((value) => {
+                        console.log(value);
+                        return value;
+                    }),
                 },
             };
         default:
