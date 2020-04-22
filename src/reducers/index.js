@@ -25,7 +25,7 @@ export const rootReducer = (state = initialState, action) => {
                 car: {
                     features: state.car.features.map((value) => {
                         console.log(value);
-                        return value;
+                        return value - state.additionalPrice;
                     }),
                 },
             };
@@ -35,7 +35,8 @@ export const rootReducer = (state = initialState, action) => {
                 car: {
                     features: state.car.features.map((value) => {
                         console.log(value);
-                        return value;
+                        console.log('ADD_FEATURE', state);
+                        return value + state.additionalPrice;
                     }),
                 },
             };

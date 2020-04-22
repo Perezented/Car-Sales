@@ -14,7 +14,7 @@ const App = (props) => {
         // dispatch an action here to remove an item
         return {
             type: 'REMOVE_FEATURE',
-            // payload:
+            payload: item,
         };
     };
 
@@ -22,7 +22,7 @@ const App = (props) => {
         // dipsatch an action here to add an item
         return {
             type: 'ADD_FEATURE',
-            // payload:
+            payload: item,
         };
     };
 
