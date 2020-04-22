@@ -8,14 +8,22 @@ import AdditionalFeatures from './components/AdditionalFeatures';
 import Total from './components/Total';
 
 const App = (props) => {
-    console.log('in App.js: ',props.state);
+    console.log('in App.js: ', props.state);
 
     const removeFeature = (item) => {
         // dispatch an action here to remove an item
+        return {
+            type: 'REMOVE_FEATURE',
+            // payload:
+        };
     };
 
-    const buyItem = (item) => {
+    const addFeature = (item) => {
         // dipsatch an action here to add an item
+        return {
+            type: 'ADD_FEATURE',
+            // payload:
+        };
     };
 
     return (
@@ -38,7 +46,7 @@ const App = (props) => {
 };
 const mapStateToProps = (state) => {
     return {
-        state
+        state,
     };
 };
 export default connect(mapStateToProps, {})(App);
