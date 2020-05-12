@@ -1,4 +1,6 @@
-export const rootReducer = () => {
+import { ADD_FEATURE } from '../actions/mainActions';
+
+export const initialState = () => {
     const state = {
         additionalPrice: 0,
         car: {
@@ -18,4 +20,17 @@ export const rootReducer = () => {
     return {
         state,
     };
+};
+
+export const totalReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case ADD_FEATURE:
+            console.log('addFeature');
+            return {
+                ...state,
+                additionalPrice: state.additionalPrice + action.payload,
+            };
+        default:
+            return state;
+    }
 };
