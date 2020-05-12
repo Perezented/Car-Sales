@@ -4,6 +4,6 @@ export const addFeature = (additionalPrice) => {
 };
 
 export const REMOVE_FEATURE = 'REMOVE_FEATURE';
-export const removeFeature = (newTotal) => {
-    return { type: REMOVE_FEATURE, payload: newTotal };
+export const removeFeature = (removeMe) => {
+    return { type: REMOVE_FEATURE, payload: removeMe };
 };

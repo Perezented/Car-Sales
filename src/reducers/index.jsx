@@ -1,4 +1,4 @@
-import { ADD_FEATURE } from '../actions/mainActions';
+import { ADD_FEATURE } from '../actions';
 
 export const initialState = {
     additionalPrice: 0,
@@ -26,7 +26,7 @@ export const totalReducer = (state = initialState, action) => {
                 additionalPrice: state.additionalPrice + action.payload.price,
                 car: {
                     ...state.car,
-                    features: [action.payload],
+                    features: [...state.car.features, action.payload],
                 },
             };
         default:
