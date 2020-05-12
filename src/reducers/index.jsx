@@ -23,7 +23,7 @@ export const totalReducer = (state = initialState, action) => {
             console.log('addFeature');
             return {
                 ...state,
-                additionalPrice: state.additionalPrice + action.payload,
+                additionalPrice: state.additionalPrice + action.payload.price,
                 car: {
                     ...state.car,
                     features: [action.payload],
