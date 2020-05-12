@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { addFeature, removeFeature } from '../actions';
+import { addFeature } from '../actions';
 
 const AdditionalFeature = (props) => {
     console.log('additionalFeature props', props);
@@ -10,8 +10,7 @@ const AdditionalFeature = (props) => {
             {/* Add an onClick that will let you add a feature to your car */}
             <button
                 className="button"
-                onClick={(e) => {
-                    e.preventDefault();
+                onClick={() => {
                     props.addFeature(props.feature);
                 }}
             >
@@ -23,10 +22,8 @@ const AdditionalFeature = (props) => {
 };
 
 const mapStateToProps = (state) => {
-    console.log('mSTP: ', state);
+    // console.log('mSTP: ', state);
     return { state };
 };
 
-export default connect(mapStateToProps, { addFeature, removeFeature })(
-    AdditionalFeature
-);
+export default connect(mapStateToProps, { addFeature })(AdditionalFeature);

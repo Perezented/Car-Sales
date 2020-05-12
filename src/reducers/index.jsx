@@ -1,4 +1,4 @@
-import { ADD_FEATURE } from '../actions';
+import { ADD_FEATURE, REMOVE_FEATURE } from '../actions';
 
 export const initialState = {
     additionalPrice: 0,
@@ -19,8 +19,14 @@ export const initialState = {
 
 export const totalReducer = (state = initialState, action) => {
     switch (action.type) {
+        case REMOVE_FEATURE:
+            console.log('removedFeature');
+            return {
+                ...state,
+                additionalPrice: state.additionalPrice - action.payload.price,
+            };
         case ADD_FEATURE:
-            console.log('addFeature');
+            console.log('addedFeature');
             return {
                 ...state,
                 additionalPrice: state.additionalPrice + action.payload.price,
