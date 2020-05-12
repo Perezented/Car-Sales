@@ -8,7 +8,7 @@ import Total from './components/Total';
 import { connect } from 'react-redux';
 
 const App = (state) => {
-    console.log({ state });
+    console.log('Features', state.car.features);
     return (
         <div className="boxes">
             <div className="box">
@@ -29,7 +29,7 @@ const App = (state) => {
 };
 
 const mapStateToProps = (state) => {
-    console.log(state);
+    // console.log(state);
     return state;
 };
 

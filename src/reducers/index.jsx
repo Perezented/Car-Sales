@@ -26,11 +26,8 @@ export const totalReducer = (state = initialState, action) => {
                 additionalPrice: state.additionalPrice - action.payload.price,
                 car: {
                     ...state.car,
-                    features: state.car.features.filter((features) => {
-                        if (features.id === action.payload.id) {
-                            console.log(features);
-                            return !features;
-                        }
+                    features: state.car.features.map((feature) => {
+                        console.log(feature);
                     }),
                 },
             };
