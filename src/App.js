@@ -25,7 +25,6 @@ const App = (props) => {
             payload: item,
         };
     };
-
     return (
         <div className="boxes">
             <div className="box">

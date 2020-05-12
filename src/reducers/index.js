@@ -17,27 +17,26 @@ export const initialState = {
 
 export const rootReducer = (state = initialState, action) => {
     console.log('in rootReducer: ', state, action);
-    console.log('state: ', state);
+    console.log('action: ', action);
     switch (action.type) {
         case 'REMOVE_FEATURE':
             return {
                 ...state,
+                additionalPrice: state.additionalPrice - action.payload.price,
                 car: {
-                    features: state.car.features.map((value) => {
-                        console.log(value);
-                        return value - state.additionalPrice;
+                    ...state.car,
+                    features: state.car.features.filter((value) => {
+                        return value.id !== action.payload.id;
                     }),
                 },
             };
         case 'ADD_FEATURE':
             return {
                 ...state,
+                additionalPrice: state.additionalPrice + action.payload.price,
                 car: {
-                    features: state.car.features.map((value) => {
-                        console.log(value);
-                        console.log('ADD_FEATURE', state);
-                        return value + state.additionalPrice;
-                    }),
+                    ...state.car,
+                    features: [...state.car.features, action.payload],
                 },
             };
         default:
