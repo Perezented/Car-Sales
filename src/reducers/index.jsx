@@ -24,6 +24,15 @@ export const totalReducer = (state = initialState, action) => {
             return {
                 ...state,
                 additionalPrice: state.additionalPrice - action.payload.price,
+                car: {
+                    ...state.car,
+                    features: state.car.features.filter((features) => {
+                        if (features.id === action.payload.id) {
+                            console.log(features);
+                            return !features;
+                        }
+                    }),
+                },
             };
         case ADD_FEATURE:
             console.log('addedFeature');
