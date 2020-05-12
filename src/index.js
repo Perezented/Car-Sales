@@ -7,8 +7,8 @@ import './styles.scss';
 
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { initialState } from './reducers/index';
-const store = createStore(initialState);
+import { totalReducer } from './reducers/index';
+const store = createStore(totalReducer);
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(

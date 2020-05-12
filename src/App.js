@@ -8,20 +8,20 @@ import Total from './components/Total';
 import { connect } from 'react-redux';
 
 const App = (state) => {
-    console.log(state);
+    console.log({ state });
     return (
         <div className="boxes">
             <div className="box">
-                <Header car={state.state.car} />
-                <AddedFeatures car={state.state.car} />
+                <Header car={state.car} />
+                <AddedFeatures car={state.car} />
             </div>
             <div className="box">
                 <AdditionalFeatures
-                    additionalFeatures={state.state.additionalFeatures}
+                    additionalFeatures={state.additionalFeatures}
                 />
                 <Total
-                    car={state.state.car}
-                    additionalPrice={state.state.additionalPrice}
+                    car={state.car}
+                    additionalPrice={state.additionalPrice}
                 />
             </div>
         </div>
