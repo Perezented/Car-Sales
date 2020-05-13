@@ -5,5 +5,15 @@ import App from './App';
 import 'bulma/css/bulma.css';
 import './styles.scss';
 
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { totalReducer } from './reducers/index';
+const store = createStore(totalReducer);
+
 const rootElement = document.getElementById('root');
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>,
+    rootElement
+);
